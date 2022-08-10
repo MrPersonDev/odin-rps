@@ -27,3 +27,21 @@ function getWinner(player1, player2) {
         return 2
     }
 }
+
+function printWinner(winner) {
+    switch (winner) {
+        case 0:
+            console.log("Tie")
+            break;
+        case 1:
+            console.log("Player one wins")
+            break;
+        case 2:
+            console.log("Player two wins")
+            break;
+        default:
+            console.log("Something has gone horribly wrong")
+            break;
+    }
+}
+
