@@ -20,7 +20,7 @@ function getWinner(player1, player2) {
     if (player1 == player2) {
         return 0
     }
-    else if (player1 > player2 || player2 == choices.length() && player1 == 0) {
+    else if (player1 > player2 || player2 == choices.length && player1 == 0) {
         return 1
     }
     else {
@@ -52,13 +52,13 @@ for (let i = 0; i < 5; i++) {
     let player1 = getPlayerChoice()
     let player2 = getComputerChoice()
 
-    let winner = getWinner()
+    let winner = getWinner(player1, player2)
     printWinner(winner)
 
-    if (winner === 0) {
+    if (winner === 1) {
         player1Wins++
     }
-    else if (winner === 1) {
+    else if (winner === 2) {
         player2Wins++
     }
 }
@@ -69,3 +69,6 @@ if (player1Wins > player2Wins) {
 else {
     console.log("The computer wins the series")
 }
+
+console.log(player1Wins)
+console.log(player2Wins)
