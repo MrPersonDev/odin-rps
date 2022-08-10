@@ -37,7 +37,7 @@ function printWinner(winner) {
             console.log("Player one wins")
             break;
         case 2:
-            console.log("Player two wins")
+            console.log("The computer wins")
             break;
         default:
             console.log("Something has gone horribly wrong")
@@ -45,3 +45,27 @@ function printWinner(winner) {
     }
 }
 
+let player1Wins = 0
+let player2Wins = 0
+
+for (let i = 0; i < 5; i++) {
+    let player1 = getPlayerChoice()
+    let player2 = getComputerChoice()
+
+    let winner = getWinner()
+    printWinner(winner)
+
+    if (winner === 0) {
+        player1Wins++
+    }
+    else if (winner === 1) {
+        player2Wins++
+    }
+}
+
+if (player1Wins > player2Wins) {
+    console.log("Player one wins the series")
+}
+else {
+    console.log("The computer wins the series")
+}
