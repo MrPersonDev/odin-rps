@@ -20,7 +20,7 @@ function getWinner(player1, player2) {
     if (player1 == player2) {
         return 0
     }
-    else if (player1 > player2 || (player2 == choices.length && player1 == 0)) {
+    else if (player1 > player2 || (player2 == choices.length-1 && player1 == 0)) {
         return 1
     }
     else {
@@ -49,11 +49,14 @@ let player1Wins = 0
 let player2Wins = 0
 
 for (let i = 0; i < 5; i++) {
-    let player1 = getPlayerChoice()
-    let player2 = getComputerChoice()
-
-    let winner = getWinner(player1, player2)
-    printWinner(winner)
+    let winner
+    do {
+        let player1 = getPlayerChoice()
+        let player2 = getComputerChoice()
+        winner = getWinner(player1, player2)
+        printWinner(winner)
+    }
+    while (winner == 0)
 
     if (winner === 1) {
         player1Wins++
