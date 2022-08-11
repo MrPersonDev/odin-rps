@@ -1,0 +1,15 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 150px;
+}
+
+.scores {
+    display: flex;
+    gap: 10px
+}
+
+.buttons {
+    display: flex;
+}
